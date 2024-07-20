@@ -1,0 +1,31 @@
+.flex__container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  height: 100vh;
+  border: 1px solid red;
+  /* align-items: center; */
+  /* flex-direction: column; */
+}
+.flex__items {
+  padding: 50px;
+  height: 100px;
+  /* width: 25%; */
+  /* flex-basis: 25%; */
+
+  /* It will work only when our direction is row */
+  background-color: green;
+  color: yellow;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.first__child {
+  order: 2;
+  /* flex-grow: 2; */
+}
+.flex__items:nth-child(4) {
+  order: 3;
+}
+.flex__items:nth-child(5) {
+  order: 3;
+}
