@@ -1,12 +1,12 @@
 import { NestedComponentOne } from "./NestedComponentOne";
 
-const NestedComponent = (props) => {
-  console.log("reRender again nested");
+const NestedComponent = ({ data, updateValue }) => {
+  console.log("reRender again nested", data, updateValue);
 
   return (
     <div>
       <h1>Nested Component one</h1>
-      <NestedComponentOne value={props.data} updateValue={props.updateValue} />
+      <NestedComponentOne value={data} updateValue={updateValue} />
     </div>
   );
 };

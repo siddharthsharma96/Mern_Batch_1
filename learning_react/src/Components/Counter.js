@@ -3,6 +3,9 @@ import { ConditionOne } from "./ConditionOne";
 import ConditionTwo from "./ConditionTwo";
 
 const Counter = () => {
+  // let ab = { name: "sid", mobile: 7011, email: "sid@" };
+  // let { name, email } = ab;
+  // console.log(name, email);
   const [value, setValue] = useState(0);
   const [a, setA] = useState(0);
   const handleDecrement = () => {
@@ -23,20 +26,20 @@ const Counter = () => {
   // Case 1 : Empty array of dependency : When my component mounts for the first time callback function will
   // run only at that time
   useEffect(() => {
-    console.log("Useefect is running");
+    // console.log("Useefect is running");
   }, []);
 
   // case 2 : whenever my dependency is changing my callback function will run
   useEffect(() => {
-    console.log("Useefect  is running when value is changing");
+    // console.log("Useefect  is running when value is changing");
   }, [value]);
   useEffect(() => {
-    console.log("Useefect  is running when a is changing");
+    // console.log("Useefect  is running when a is changing");
   }, [a]);
 
   // case 3: When we have no array of dependecy at that that it will run everytime whenever any value in component is changing
   useEffect(() => {
-    console.log("Useefect will run everytime");
+    // console.log("Useefect will run everytime");
   });
   return (
     <div>

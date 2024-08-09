@@ -1,3 +1,21 @@
 .app {
   text-align: center;
 }
+.userCard {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.container {
+  position: relative;
+  border: 1px solid black;
+  flex-basis: 300px;
+}
+.a {
+  position: absolute;
+  top: 10%;
+  left: -10px;
+  background-color: red;
+  color: white;
+}
