@@ -1,0 +1,18 @@
+.header {
+  border: 1px solid black;
+  display: flex;
+  gap: 20px;
+}
+.navItems > a {
+  /* border: 1px solid red; */
+  color: black;
+  text-decoration: none;
+}
+
+.active {
+  color: green !important;
+  font-weight: 700;
+}
+.loader {
+  color: red;
+}

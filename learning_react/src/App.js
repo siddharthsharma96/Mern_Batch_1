@@ -7,6 +7,7 @@ import Debouncing from "./Components/Debouncing";
 import UserCard from "./Components/UserCard";
 import { useEffect, useState } from "react";
 import UserCardwithExtraField from "./Components/UserCardwithextraField";
+import StatelessComponent from "./Components/StatelessComponent";
 
 function App() {
   const [data, setData] = useState([]);
@@ -40,15 +41,16 @@ function App() {
           />
         ))}
       </div> */}
-      <div className="userCard">
+      {/* <div className="userCard">
         {data.map((item) => {
           return <HOFCOMPONENT user={item} />;
         })}
-      </div>
+      </div> */}
+      <StatelessComponent />
 
       {/* <Counter /> */}
-      {/* <CounterNew />
-      <Debouncing /> */}
+      <CounterNew />
+      {/* <Debouncing /> */}
       {/* <Header /> */}
       {/* <h1>Learning React </h1>
       // <Header />

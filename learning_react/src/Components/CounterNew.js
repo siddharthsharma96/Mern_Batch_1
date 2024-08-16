@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const CounterNew = () => {
   const [value, setValue] = useState(0);
+  const setter = useRef("");
   const handleDecrement = () => {
     setValue(value - 1);
+    setter.current.style.color = "red";
   };
   useEffect(() => {
     if (value < 0) {
@@ -21,11 +23,12 @@ const CounterNew = () => {
   return (
     <div>
       <h1>Counter</h1>
-      <p>{value}</p>
+      <p ref={setter}>{value}</p>
       <div>
         <button
           onClick={() => {
             setValue(value + 1);
+            setter.current.style.color = "green";
           }}
         >
           Increment
