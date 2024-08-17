@@ -1,0 +1,49 @@
+@import url("./Style/base.css");
+body {
+  height: 100%;
+}
+* {
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-nunito);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: white;
+  box-shadow: 0 15px 40px -20px rgba(40, 44, 63, 0.2);
+  height: 70px;
+}
+.logo {
+  width: 60px;
+  height: 50px;
+  margin-left: 140px;
+}
+.nav__items {
+  margin-right: 140px;
+}
+.nav__items ul {
+  display: flex;
+  gap: 70px;
+  list-style-type: none;
+  font-weight: 500;
+}
+.nav__items ul li a {
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  color: black;
+}
+
+.nav__items ul li .active {
+  color: #fc8019;
+}
+
+.nav__items ul li > a:hover {
+  color: #fc8019;
+}
