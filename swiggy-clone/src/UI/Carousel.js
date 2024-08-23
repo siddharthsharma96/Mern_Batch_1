@@ -17,25 +17,25 @@ const Carousel = ({ resData }) => {
   };
   return (
     <div className="carousel">
-      <div className="carousel__container">
+      <div className="carouselContainer">
         <h2>Top restaurant chains in Noida</h2>
-        <div className="slide__Container">
-          <button className="slide__Arrow" onClick={handlePrevSlide}>
+        <div className="slidesContainer">
+          <button className="slideArrow" onClick={handlePrevSlide}>
             <img src="/images/left.png" alt="." />
           </button>
-          <button className="slide__Arrow" onClick={handleNextSlide}>
+          <button className="slideArrow" onClick={handleNextSlide}>
             <img src="/images/right.png" alt="." />
           </button>
         </div>
       </div>
 
-      <section className="slider__Wrapper">
-        <ul className="slide_Container" ref={slidesContainerRef}>
+      <section className="sliderWrapper">
+        <ul className="slidesContainer" ref={slidesContainerRef}>
           {resData.length > 0 &&
             resData.map((res) => {
               return (
                 <li className="slide" key={res?.info?.id}>
-                  <Card resData={res} />
+                  <Card resData={res} show={false} />
                 </li>
               );
             })}

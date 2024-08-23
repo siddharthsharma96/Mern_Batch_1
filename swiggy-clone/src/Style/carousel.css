@@ -2,74 +2,104 @@
   display: flex;
   flex-direction: column;
   margin: calc(140px) 140px 70px 0;
-  margin: 140px 140px 0 140px;
+  /* margin: 140px 140px 0 140px; */
 }
 body {
   margin: auto;
 }
-
-.carousel__container {
+.carouselContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #d4d5d9;
   padding-bottom: 20px;
   margin-bottom: 40px;
 }
-.slide__Arrow {
+.sliderWrapper {
+  overflow: hidden;
+}
+
+.slideArrow {
   border-radius: 50%;
   padding: 6px 12px;
   border: none;
   cursor: pointer;
+  color: grey;
   font-size: 16px;
   font-weight: 700;
 }
-.slide__Arrow:first-child {
-  margin-right: 10px;
+.slideArrow:first-child {
+  margin-right: 9px;
 }
-.slide__Arrow > img {
+.slideArrow > img {
   height: 10px;
   width: 10px;
 }
 
-.slider__Wrapper {
-}
-.slide_Container {
+.slidesContainer {
   display: flex;
-  list-style: none;
   overflow: scroll;
   scroll-behavior: smooth;
+  list-style: none;
   margin: 0;
   padding: 0;
 }
-.slide_Container::-webkit-scrollbar {
-  display: none;
-}
+
 .slide {
   width: 20%;
   flex: 0 0 auto;
 }
+
 .slide > .card {
-  /* border: 1px solid black; */
   width: 85%;
   height: 200px;
-  padding: 4px;
-  border: 1px solid white;
 }
 
-.slide > .card > img {
-  height: 150px;
-  width: 100%;
-  border-radius: 8px;
-}
-
-.slide > .card > .card__Data > .card__Res__Name {
+.slide > .card > .cardData > .cardResName {
   font-size: 16px;
   padding-bottom: 0;
 }
 
-.slide > .card:hover {
-  border: 1px solid lightgray;
-  border-radius: 8px;
-  /* padding: 4px; */
+.slidesContainer::-webkit-scrollbar {
+  display: none;
+}
+@media screen and (max-width: 790px) {
+  .slide {
+    width: 31%;
+    flex: 0 0 auto;
+  }
+  .slide > .card {
+    height: 180px;
+  }
+  .slide > .card > img {
+    height: 110px;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .slide {
+    width: 31%;
+    flex: 0 0 auto;
+  }
+  .slide > .card {
+    height: 180px;
+  }
+  .slide > .card > img {
+    height: 110px;
+  }
+  .slideContainer {
+    display: flex;
+    gap: 10px;
+  }
+  .slideArrow {
+    padding: 5px 11px;
+    margin-right: 6px;
+    font-size: 12px;
+  }
+  .carouselContainer > h2 {
+    font-size: 18px;
+  }
+  .carousel {
+    margin-right: 90px;
+  }
 }
