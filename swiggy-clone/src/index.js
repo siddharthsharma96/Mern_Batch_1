@@ -6,6 +6,9 @@ import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./Pages/Home";
 import Restaurant from "./Pages/Restaurant";
+import Help from "./Pages/Help";
+import Search from "./Pages/Search";
+import Cart from "./Pages/Cart";
 
 const routes = createBrowserRouter([
   {
@@ -19,6 +22,18 @@ const routes = createBrowserRouter([
       {
         path: "/restaurant/:resId",
         element: <Restaurant />,
+      },
+      {
+        path: "/help",
+        element: <Help />,
+      },
+      {
+        path: "/search",
+        element: <Search />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
       {
         path: "*",

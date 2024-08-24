@@ -1,9 +1,13 @@
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import UserContext from "../Utils/userContext";
 const Card = ({ resData, show }) => {
   const navigate = useNavigate();
   const redirectHandler = () => {
     navigate(`/restaurant/${resData.info.id}`);
   };
+  const { userName } = useContext(UserContext);
+
   return (
     <div className="card" onClick={redirectHandler}>
       <img
@@ -22,6 +26,7 @@ const Card = ({ resData, show }) => {
               <span className="cardResRating">{resData.info.avgRating}</span>
               <span className="cardResTime">3.2</span>
             </div>
+            <p>{userName}</p>
           </>
         )}
       </div>

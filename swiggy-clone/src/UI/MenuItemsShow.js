@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addItem, removeItem } from "../Utils/CartSlice";
 
 const MenuItemsShow = ({ menu }) => {
-  console.log(menu);
-
-  const [itemQuantity, setItemQuantity] = useState(0);
+  // console.log(menu);
+  const dispatch = useDispatch();
+  const items = useSelector((store) => store.cart.items);
+  console.log(items);
+  const itemQuantity = items.length;
   return (
     <div className="menuFoodCard">
       <div className="menuFoodCardInfo">
@@ -16,12 +19,31 @@ const MenuItemsShow = ({ menu }) => {
       <div className="menuFoodCardImageInfo">
         {itemQuantity > 0 ? (
           <div className="fgfg">
-            <button>-</button>
-            <span>2</span>
-            <button>+</button>
+            <button
+              onClick={() => {
+                dispatch(removeItem());
+              }}
+            >
+              -
+            </button>
+            <span>{items.length}</span>
+            <button
+              onClick={() => {
+                dispatch(addItem(menu));
+              }}
+            >
+              +
+            </button>
           </div>
         ) : (
-          <button className="addItems">Add</button>
+          <button
+            className="addItems"
+            onClick={() => {
+              dispatch(addItem(menu));
+            }}
+          >
+            Add
+          </button>
         )}
         <img src={`/images/${menu.card.info.imgName}`} />
       </div>

@@ -6,6 +6,10 @@
   flex-direction: column;
   margin-bottom: 100px;
 }
+input {
+  margin-top: 90px;
+  width: 50%;
+}
 .card {
   flex-basis: 22.5%;
   width: 22.5%;

@@ -27,7 +27,7 @@ const Restaurant = () => {
     fetchData();
     fetchMenu();
   }, []);
-  console.log(restaurant, menu);
+  // console.log(restaurant, menu);
   const findRestaurant = () => {
     return restaurant.find((item) => item?.info?.id === params.resId);
   };
