@@ -1,6 +1,7 @@
 const fs = require("fs");
 const http = require("http");
 const url = require("url");
+const replaceTemplate = require("./modules/replaceTemplate");
 
 // blocking synchronous
 
@@ -71,7 +72,12 @@ const url = require("url");
 // 4xx:client error
 // 5xx:Server Error
 const overview = fs.readFileSync("./templates/overview.html", "utf-8");
+const card = fs.readFileSync("./templates/card.html", "utf-8");
 const product = fs.readFileSync("./templates/product.html", "utf-8");
+const data = fs.readFileSync(`${__dirname}/dev-data/data.json`);
+const data_obj = JSON.parse(data);
+// console.log(data_obj);
+// const replaceTemplate =
 
 const server = http.createServer((req, res) => {
   //   console.log(req.url);
@@ -80,16 +86,29 @@ const server = http.createServer((req, res) => {
 
   //   console.log(query, pathname);
   //   res.end("At About Page");
-  if (pathname === "/") {
+  if (pathname === "/" || pathname === "/overview") {
     res.writeHead(200, {
       "Content-type": "text/html",
     });
-    res.end(overview);
+    const cardHtml = data_obj.map((el) => replaceTemplate(card, el)).join(" ");
+    // console.log(cardHtml);
+
+    const output = overview.replace("{%PRODUCT_CARDS%}", cardHtml);
+
+    res.end(output);
   } else if (pathname === "/product") {
     res.writeHead(200, {
       "Content-type": "text/html",
     });
-    res.end(product);
+    // console.log(query);
+    const productDetail = data_obj[query.id];
+    const output = replaceTemplate(product, productDetail);
+    res.end(output);
+  } else if (pathname === "/api") {
+    res.writeHead(200, {
+      "Content-type": "application/json",
+    });
+    res.end(data);
   } else {
     res.writeHead(404, {
       "Content-type": "text/html",
