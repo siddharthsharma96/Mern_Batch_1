@@ -11,7 +11,7 @@ const Help = () => {
       }
     };
     fetchData();
-  });
+  }, []);
   const [toggledTitle, setToggledTitle] = useState(null);
   const handleClick = (clickedTitle) => {
     setToggledTitle(toggledTitle === clickedTitle ? null : clickedTitle);
