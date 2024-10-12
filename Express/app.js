@@ -1,8 +1,10 @@
 const express = require('express');
 const tourRouter = require('./Routes/tourRoutes');
 const userRouter = require('./Routes/userRoutes');
+const cors = require('cors');
 
 const app = express();
+app.use(cors());
 
 app.use(express.json());
 
