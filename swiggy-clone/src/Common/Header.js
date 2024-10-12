@@ -1,6 +1,8 @@
 // import { useContext } from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+import Logout from "../Pages/Logout";
+import { useEffect, useState } from "react";
 // import UserContext from "../Utils/userContext";
 // import CartContext from "../Utils/cartContext";
 
@@ -8,6 +10,7 @@ const Header = () => {
   // const { userName } = useContext(UserContext);
   // const { items } = useContext(CartContext);
   const items = useSelector((store) => store.cart.items);
+
   return (
     <div className="header">
       <div className="logo__Container">
@@ -25,6 +28,7 @@ const Header = () => {
               Home
             </NavLink>
           </li>
+
           <li>
             <NavLink
               to="/help"
@@ -33,6 +37,7 @@ const Header = () => {
               Help
             </NavLink>
           </li>
+
           <li>
             <NavLink
               to="/search"
@@ -48,6 +53,9 @@ const Header = () => {
             >
               Cart {items.length}
             </NavLink>
+          </li>
+          <li>
+            <Logout />
           </li>
         </ul>
       </div>

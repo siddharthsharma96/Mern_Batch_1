@@ -9,6 +9,8 @@ import Restaurant from "./Pages/Restaurant";
 import Help from "./Pages/Help";
 import Search from "./Pages/Search";
 import Cart from "./Pages/Cart";
+import Login from "./Pages/Login";
+import ProtectRoute from "./UI/ProtectedRoute";
 
 const routes = createBrowserRouter([
   {
@@ -17,7 +19,16 @@ const routes = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />,
+        element: (
+          <ProtectRoute>
+            {" "}
+            <Home />
+          </ProtectRoute>
+        ),
+      },
+      {
+        path: "/login",
+        element: <Login />,
       },
       {
         path: "/restaurant/:resId",
@@ -25,7 +36,12 @@ const routes = createBrowserRouter([
       },
       {
         path: "/help",
-        element: <Help />,
+        element: (
+          <ProtectRoute>
+            {" "}
+            <Help />
+          </ProtectRoute>
+        ),
       },
       {
         path: "/search",

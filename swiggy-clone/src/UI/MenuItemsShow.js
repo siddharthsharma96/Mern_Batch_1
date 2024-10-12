@@ -5,7 +5,7 @@ const MenuItemsShow = ({ menu }) => {
   // console.log(menu);
   const dispatch = useDispatch();
   const items = useSelector((store) => store.cart.items);
-  console.log(items);
+  // console.log(items);
   const itemQuantity = items.length;
   return (
     <div className="menuFoodCard">
